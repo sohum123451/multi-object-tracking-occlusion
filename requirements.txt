@@ -7,3 +7,6 @@ pytest==9.1.1
 ultralytics==8.4.135
 torch==2.13.0
 torchvision==0.28.0
+torchreid==0.2.5
+gdown==6.4.1
+tensorboard==2.21.0
