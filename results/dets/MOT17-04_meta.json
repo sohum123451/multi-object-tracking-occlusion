@@ -1,0 +1,12 @@
+{
+  "sequence": "MOT17-04",
+  "sequence_dir": "data\\MOT17\\train\\MOT17-04-FRCNN",
+  "total_frames": 1050,
+  "total_detections": 21961,
+  "elapsed_sec": 61.05271560000256,
+  "fps": 17.198252193714968,
+  "weights": "yolov8n.pt",
+  "conf": 0.25,
+  "imgsz": 640,
+  "cached": false
+}
