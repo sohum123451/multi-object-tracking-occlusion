@@ -26,6 +26,9 @@ data/**/img1/
 *.bin
 *.onnx
 
-# Cache embeddings
+# Cache embeddings and raw eval artifacts
 results/embeddings/
+results/evaluation/
+results/evaluation_ablation/
+results/ablation_tracks/
 *.npz
