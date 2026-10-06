@@ -19,3 +19,9 @@ env/
 
 # Large visual media (preserve text annotations det.txt and gt.txt)
 data/**/img1/
+
+# Model weights
+*.pt
+*.pth
+*.bin
+*.onnx
