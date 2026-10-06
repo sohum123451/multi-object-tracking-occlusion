@@ -1,0 +1,12 @@
+{
+  "sequence": "MOT17-09",
+  "tracker": "sort",
+  "total_frames": 525,
+  "unique_tracks": 99,
+  "total_instances": 4788,
+  "elapsed_sec": 0.3820530000375584,
+  "fps": 1374.1548946046464,
+  "max_age": 30,
+  "min_hits": 3,
+  "iou_threshold": 0.3
+}
