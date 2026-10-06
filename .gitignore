@@ -25,3 +25,7 @@ data/**/img1/
 *.pth
 *.bin
 *.onnx
+
+# Cache embeddings
+results/embeddings/
+*.npz
