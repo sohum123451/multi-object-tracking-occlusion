@@ -12,6 +12,8 @@ htmlcov/
 venv/
 env/
 .venv/
+node_modules/
+dist/
 
 # Editor
 .vscode/

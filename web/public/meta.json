@@ -1,0 +1,10 @@
+{
+  "sequence": "MOT17-04",
+  "orig_width": 1920,
+  "orig_height": 1080,
+  "num_frames": 300,
+  "keyframe_step": 5,
+  "sort_track_count": 68,
+  "deepsort_track_count": 58,
+  "switch_count": 112
+}

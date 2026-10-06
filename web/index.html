@@ -1,18 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Object Tracking Evaluation Interface</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space-Time MOT Viewer: SORT vs DeepSORT</title>
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-    <header>
-        <h1>Multi-Object Tracking Evaluation Interface</h1>
+  <div id="app">
+    <header id="top-bar">
+      <div class="header-left">
+        <h1 class="app-title">Space-Time Evaluation Viewer</h1>
+        <span class="dataset-tag">MOT17-04 (Frames 1-300)</span>
+      </div>
+      <div class="header-right">
+        <button id="btn-view-toggle" class="btn" title="Toggle between 3D Space-Time perspective and 2D Image-Plane view">
+          Top-Down 2D View
+        </button>
+        <button id="btn-reset-cam" class="btn" title="Reset camera view">
+          Reset Camera
+        </button>
+      </div>
     </header>
-    <main>
-        <section id="results-display">
-            <p>Evaluation results and sequence tracking demonstrations.</p>
-        </section>
+
+    <div id="controls-bar">
+      <div class="scrubber-group">
+        <button id="btn-play" class="btn btn-icon" title="Play/Pause frame playback">Play</button>
+        <label for="frame-slider" class="control-label">Time Plane (Frame):</label>
+        <input type="range" id="frame-slider" min="1" max="300" value="1" step="1">
+        <span id="frame-indicator">001 / 300</span>
+      </div>
+
+      <div class="switch-selector-group">
+        <label for="switch-select" class="control-label">ID Switch Navigator:</label>
+        <select id="switch-select">
+          <option value="">-- Select Switch Event --</option>
+        </select>
+        <button id="btn-prev-switch" class="btn btn-sm">Prev</button>
+        <button id="btn-next-switch" class="btn btn-sm">Next</button>
+      </div>
+    </div>
+
+    <main id="main-view">
+      <div class="viewport-panel" id="panel-sort">
+        <div class="panel-header">
+          <span class="panel-badge">SORT (Motion Only)</span>
+          <span class="panel-stat" id="stat-sort">Loading...</span>
+        </div>
+        <div class="canvas-container" id="container-sort"></div>
+      </div>
+
+      <div class="viewport-panel" id="panel-deepsort">
+        <div class="panel-header">
+          <span class="panel-badge">DeepSORT (Appearance Cascade)</span>
+          <span class="panel-stat" id="stat-deepsort">Loading...</span>
+        </div>
+        <div class="canvas-container" id="container-deepsort"></div>
+      </div>
     </main>
+
+    <footer id="bottom-bar">
+      <div id="switch-detail-card">
+        <div class="detail-header">
+          <span class="detail-title">Selected Event Details</span>
+          <span id="detail-badge" class="badge-neutral">No event selected</span>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-item"><span class="k">Tracker:</span> <span class="v" id="det-tracker">-</span></div>
+          <div class="detail-item"><span class="k">Frame:</span> <span class="v" id="det-frame">-</span></div>
+          <div class="detail-item"><span class="k">GT Identity:</span> <span class="v" id="det-gt">-</span></div>
+          <div class="detail-item"><span class="k">Prediction Switch:</span> <span class="v" id="det-pred">-</span></div>
+          <div class="detail-item"><span class="k">Assigned Causes:</span> <span class="v" id="det-causes">-</span></div>
+          <div class="detail-item"><span class="k">GT Visibility:</span> <span class="v" id="det-vis">-</span></div>
+          <div class="detail-item"><span class="k">Inter-GT Max IoU:</span> <span class="v" id="det-iou">-</span></div>
+          <div class="detail-item"><span class="k">GT Speed:</span> <span class="v" id="det-speed">-</span></div>
+          <div class="detail-item"><span class="k">Cosine Similarity:</span> <span class="v" id="det-cossim">-</span></div>
+        </div>
+      </div>
+      <div id="legend-card">
+        <div class="legend-title">Legend & Controls</div>
+        <div class="legend-items">
+          <div class="legend-row"><span class="key-indicator dot-tube"></span> Tubes: Track trajectories through space-time (colored by ID)</div>
+          <div class="legend-row"><span class="key-indicator dot-plane"></span> Translucent Plane: Current video frame (X/Y position, Z time)</div>
+          <div class="legend-row"><span class="key-indicator dot-switch"></span> Red Rings: ID switch failure points (click to fly camera)</div>
+          <div class="legend-row"><span class="key-indicator"></span> Left-click drag to orbit | Right-click drag to pan | Scroll to zoom</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>
