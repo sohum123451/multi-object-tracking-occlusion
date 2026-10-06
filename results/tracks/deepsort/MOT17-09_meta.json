@@ -1,0 +1,16 @@
+{
+  "sequence": "MOT17-09",
+  "tracker": "deepsort",
+  "total_frames": 525,
+  "unique_tracks": 58,
+  "total_instances": 4786,
+  "elapsed_sec": 0.9521039999090135,
+  "fps": 551.4103501825125,
+  "max_age": 30,
+  "min_hits": 3,
+  "iou_threshold": 0.3,
+  "max_cosine_distance": 0.2,
+  "nn_budget": 100,
+  "gating_threshold": 9.4877,
+  "embed_model": "osnet_x0_25"
+}
