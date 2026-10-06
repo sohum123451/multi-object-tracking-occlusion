@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Environment
+.env
+venv/
+env/
+.venv/
+
+# Editor
+.vscode/
+.idea/
+
+# Large visual media (preserve text annotations det.txt and gt.txt)
+data/**/img1/
