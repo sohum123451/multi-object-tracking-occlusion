@@ -1,0 +1,1 @@
+"""Appearance embedding extraction module."""
